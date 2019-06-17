@@ -5,6 +5,7 @@ const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -16,7 +17,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/googlebooks" || "mongodb://heroku_b2scjrnb:heroku_b2scjrnb@ds139037.mlab.com:39037/heroku_b2scjrnb/googlebooks";
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/googlebooks" || "mongodb://heroku_b2scjrnb:heroku_b2scjrnb@ds139037.mlab.com:39037/googlebooks";
 
 mongoose.connect(MONGODB_URI);
 
