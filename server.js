@@ -28,3 +28,7 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 app.listen(PORT, function() {
   console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
+
+app.get('*', (request, response) => {
+	response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
