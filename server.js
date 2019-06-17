@@ -21,7 +21,8 @@ app.use(routes);
 // Connect to the Mongo DB
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/googlebooks";
 
-mongoose.connect(MONGODB_URI);
+mongoose.Promise = Promise;
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 // Start the API server
 app.listen(PORT, function() {
